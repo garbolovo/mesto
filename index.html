@@ -1,10 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Mesto</title>
-</head>
-<body>
+<html lang="ru">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Mesto Project on Yandex Praktikum" />
+  <meta name="keywords" content="html, css, bem responsive @media js-basic" />
+  <meta name="author" content="Aleksei Levkovich" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="pages/index.css" />
+  <title>M e s t o</title>
+</head>
+
+<body>
+  <div class="page">
+    <header class="header">
+      <img src="./images/logo.png" alt="логотип заголовка" class="header__logo" />
+    </header>
+
+    <main class="content">
+
+      <section class="profile">
+        <img src="./images/avatar-kusto.png" alt="аватар профиля">
+        <h1 class="lead__title">Жак Ив Кусто</h1>
+        <p class="lead__subtitle">
+          Исследователь океана
+        </p>
+      </section>
+
+
+      <!--      elements-->
+      <section class="elements">
+        <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="element__item" />
+        <img src="./images/kondratiev.jpg" alt="Кондратьев" class="element__item" />
+        <img src="./images/kamchatka-1.jpg" alt="Камчатка номер 1" class="element__item" />
+        <img src="./images/kamchatka-2.jpg" alt="Камчатка номер 2" class="element__item" />
+        <img src="./images/baikal.jpg" alt="Байкал" class="element__item" />
+        <img src="./images/ergaki.jpg" alt="Эргаки место" class="element__item" />
+      </section>
+
+
+      <!--      edit form-->
+<!--      <section class="edit-form">-->
+<!--        <a href="https://stampsy.com/na-elektrichkakh-do-baikala" class="cover__link" target="_blank">-->
+<!--          <h2 class="cover__title">До Байкала «на собаках»</h2>-->
+<!--          <p class="cover__subtitle">-->
+<!--            По мотивам учебной темы о Транссибе — путешествие от столицы до-->
+<!--            Байкала на электричках.-->
+<!--          </p>-->
+<!--        </a>-->
+<!--      </section>-->
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+    </footer>
+  </div>
 </body>
+
 </html>
