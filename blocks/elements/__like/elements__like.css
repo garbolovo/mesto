@@ -1,0 +1,13 @@
+.elements__like {
+  /*border: #ef0650 4px solid;*/
+  margin-top: 5px;
+  margin-right: 5px;
+  width: 22px;
+  height: 19px;
+  background-image: url("../../../images/like.png");
+  background-size: 100% 100%;
+}
+
+.elements__like:hover {
+  cursor: pointer;
+}
