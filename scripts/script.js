@@ -44,7 +44,7 @@ closePopup.addEventListener('click', (event) => {
 })
 
 saveForm.addEventListener('click', (event) => {
-  ev.preventDefault();
+  event.preventDefault();
   popup.classList.remove('popup_shown');
 
   localStorage.setItem('name', nameInput.value);
