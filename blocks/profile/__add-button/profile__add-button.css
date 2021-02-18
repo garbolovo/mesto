@@ -12,9 +12,23 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 22px 22px;
-
 }
 
 .profile__add-button:hover {
   cursor: pointer;
+}
+
+@media (max-width: 699px) {
+  .profile__add-button {
+    margin: 0;
+  }
+}
+
+
+@media(max-width:539px) {
+  .profile__add-button {
+    margin: 0 auto;
+    width: 100%;
+
+  }
 }

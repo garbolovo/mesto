@@ -1,13 +1,11 @@
 .popup__position {
-
+  font-family: inherit;
   padding: 5px;
   margin: 0;
   padding-bottom: 17px;
   border: 0;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
   margin-bottom: 48px;
-
-
   text-align: left;
   color: #000000;
   font-weight: 400;

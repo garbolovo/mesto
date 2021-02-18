@@ -1,6 +1,15 @@
 .profile__info {
-  /*display: flex;*/
   color: #ffffff;
   margin-right: 18px;
+  max-width: 489px;
+  display: flex;
 
+}
+
+
+@media(max-width:539px) {
+  .profile__info {
+    margin: 0;
+
+  }
 }

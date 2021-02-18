@@ -1,27 +1,15 @@
 .popup__edit-form {
-
-  /*background-color: #fefefe;*/
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   background-color: #ffffff;
-  box-shadow: 0 0 25px rgba(0, 0, 0, .15);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-
   margin: 15% auto;
   padding: 34px 36px 37px 36px;
   border: 1px solid #888;
   width: 40%;
-
   color: #000000;
   text-align: center;
-
   position: relative;
-
   display: flex;
   flex-direction: column;
-
-
-
-
-
-
-  /*border: 1px solid yellow;*/
 }

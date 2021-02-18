@@ -5,3 +5,12 @@
 
 
 }
+
+
+@media (max-width: 539px) {
+  .elements__item {
+    max-width: 100%;
+    background-position: center center;
+  }
+}
+

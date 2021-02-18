@@ -1,0 +1,12 @@
+.profile__data {
+  margin-right: 18px;
+}
+
+
+@media(max-width:539px) {
+  .profile__data{
+    margin-right: 10px;
+    margin-bottom: 36px;
+
+  }
+}
