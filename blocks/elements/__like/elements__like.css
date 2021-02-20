@@ -1,6 +1,5 @@
 .elements__like {
   margin-top: 5px;
-  margin-right: 5px;
   width: 22px;
   height: 19px;
   background-image: url("../../../images/like.png");
@@ -11,7 +10,3 @@
   cursor: pointer;
 }
 
-.elements__like_is-liked {
-  background-image: url("../../../images/liked.png");
-
-}
