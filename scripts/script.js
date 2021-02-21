@@ -8,34 +8,13 @@ const saveForm = document.querySelector('.popup__submit-button');
 const nameInput = document.querySelector('.popup__name');
 const positionInput = document.querySelector('.popup__position');
 
-// like element
-const likes = document.querySelectorAll('.elements__like');
 
-function settingUpProfile() {
-  if (localStorage.getItem('name') !== null) {
-    profileName.textContent = localStorage.getItem('name');
-    nameInput.value = profileName.textContent;
-
-  } else {
-    nameInput.value = profileName.textContent;
-  }
-
-  if (localStorage.getItem('position') !== null) {
-    profilePosition.textContent = localStorage.getItem('position');
-    positionInput.value = profilePosition.textContent;
-
-  } else {
-    positionInput.value = profilePosition.textContent;
-  }
-
-}
-
-settingUpProfile();
+nameInput.value = profileName.textContent;
+positionInput.value = profilePosition.textContent;
 
 
 editBtn.addEventListener('click', (event) => {
   popup.classList.add('popup_shown');
-  settingUpProfile();
 
 })
 
@@ -47,20 +26,18 @@ saveForm.addEventListener('click', (event) => {
   event.preventDefault();
   popup.classList.remove('popup_shown');
 
-  localStorage.setItem('name', nameInput.value);
   profileName.textContent = nameInput.value;
 
-  localStorage.setItem('position', positionInput.value);
   profilePosition.textContent = positionInput.value;
 
 })
 
 
 //like logic
-likes.forEach(function (like) {
-  like.addEventListener('click', function (event) {
-    this.classList.toggle('elements__like_is-liked');
-  })
-})
+// likes.forEach(function (like) {
+//   like.addEventListener('click', function (event) {
+//     this.classList.toggle('elements__like_is-liked');
+//   })
+// })
 
 

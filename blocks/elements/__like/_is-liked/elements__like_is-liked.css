@@ -1,4 +1,9 @@
 .elements__like_is-liked {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
   background-image: url("../../../../images/liked.png");
   background-size: 22px 19px;
   margin-top: 5px;

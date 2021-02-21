@@ -1,8 +1,14 @@
 .elements__like {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  background-color: #ffffff;
   margin-top: 5px;
   width: 22px;
   height: 19px;
-  background-image: url("../../../images/like.png");
+  background-image: url("../../../images/like.svg");
   background-size: 100% 100%;
 }
 
