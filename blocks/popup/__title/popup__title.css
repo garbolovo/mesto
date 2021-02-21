@@ -2,13 +2,16 @@
   padding: 0;
   margin: 0;
   margin-bottom: 54px;
-
-
   color: #000000;
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;
-
-
   text-align: left;
+}
+
+@media(max-width: 539px) {
+  .popup__title {
+    font-size: 18px;
+    line-height: 21px;
+  }
 }

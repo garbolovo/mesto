@@ -57,8 +57,8 @@ saveForm.addEventListener('click', (event) => {
 
 
 //like logic
-likes.forEach(function(like) {
-  like.addEventListener('click', function(event) {
+likes.forEach(function (like) {
+  like.addEventListener('click', function (event) {
     this.classList.toggle('elements__like_is-liked');
   })
 })

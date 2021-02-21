@@ -5,11 +5,24 @@
   border-radius: 10px;
   margin: 15% auto;
   padding: 34px 36px 37px 36px;
-  border: 1px solid #888;
-  width: 40%;
+  max-width: 430px;
   color: #000000;
   text-align: center;
   position: relative;
   display: flex;
   flex-direction: column;
+}
+
+@media(max-width: 768px) {
+  .popup__edit-form {
+    width: 50%;
+
+  }
+}
+@media(max-width: 539px) {
+  .popup__edit-form {
+    width: 75%;
+    padding: 25px 21px;
+
+  }
 }

@@ -1,17 +1,17 @@
 .page {
-    /* smoothing fonts*/
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+  /* smoothing fonts*/
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 
-    /*adjusting*/
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
+  /*adjusting*/
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
 
-    text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
 
-    padding-bottom: 1px;
-    background: #000000;
-    padding-top: 45px;
-    font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
+  padding-bottom: 1px;
+  background: #000000;
+  padding-top: 45px;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
 }
