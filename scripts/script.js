@@ -5,8 +5,8 @@ const profilePosition = document.querySelector('.profile__position');
 const popup = document.querySelector('.popup');
 const closePopup = document.querySelector('.popup__close');
 const saveForm = document.querySelector('.popup__submit-button');
-const nameInput = document.querySelector('.popup__name');
-const positionInput = document.querySelector('.popup__position');
+const nameInput = document.querySelector('.popup__input-name');
+const positionInput = document.querySelector('.popup__input-position');
 
 
 nameInput.value = profileName.textContent;

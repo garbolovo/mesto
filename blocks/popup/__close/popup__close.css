@@ -1,16 +1,16 @@
 .popup__close {
   padding: 0;
   margin: 0;
-  float: right;
   width: 40px;
   height: 40px;
-  font-size: 66px;
-  line-height: 0.5;
-  text-align: center;
   color: #ffffff;
   position: absolute;
-  top: -37px;
-  right: -37px;
+  top: -43px;
+  right: -43px;
+  background-image: url('../../../images/close-popup.svg');
+  background-position: center center;
+  background-size: 150% 150%;
+  border: 1px solid red;
 }
 
 .popup__close:hover {
