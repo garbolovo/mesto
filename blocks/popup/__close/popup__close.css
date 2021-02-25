@@ -10,7 +10,7 @@
   background-image: url('../../../images/close-popup.svg');
   background-position: center center;
   background-size: 150% 150%;
-  border: 1px solid red;
+  
 }
 
 .popup__close:hover {
