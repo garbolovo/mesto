@@ -7,9 +7,12 @@
   position: absolute;
   top: -39px;
   right: -37px;
+  background: none;
+  border: none;
   background-image: url('../../../images/close-popup.svg');
   background-position: center center;
   background-size: 150% 150%;
+  
   
 }
 
