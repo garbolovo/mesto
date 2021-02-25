@@ -1,14 +1,21 @@
-.popup__position {
+.popup__input {
+
   font-family: inherit;
   padding: 5px;
   margin: 0;
-  padding-bottom: 17px;
+  padding-bottom: 13px;
   border: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  margin-bottom: 48px;
+  margin-bottom: 30px;
   text-align: left;
   color: #000000;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
+  
+}
+
+.popup__input:last-of-type {
+	margin-bottom: 48px;
+	
 }
