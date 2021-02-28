@@ -9,28 +9,34 @@ const nameInput = document.querySelector('.popup__input-name');
 const positionInput = document.querySelector('.popup__input-position');
 
 
-nameInput.value = profileName.textContent;
-positionInput.value = profilePosition.textContent;
 
+function popupToClose() {
+	popup.classList.remove('popup_shown');
+}
 
-editBtn.addEventListener('click', (event) => {
+function popupToOpen() {
   popup.classList.add('popup_shown');
+  getUserData();
+}
 
-})
+function getUserData() {
+  nameInput.value = profileName.textContent;
+  positionInput.value = profilePosition.textContent;
+  popupToOpen();
+	
+}
 
-closePopup.addEventListener('click', (event) => {
-  popup.classList.remove('popup_shown');
-})
-
-saveForm.addEventListener('click', (event) => {
-  event.preventDefault();
-  popup.classList.remove('popup_shown');
-
+function saveData(e) {
+  e.preventDefault();
   profileName.textContent = nameInput.value;
+  profilePosition.textContent = positionInput.value;	
+  popupToClose();
+}
 
-  profilePosition.textContent = positionInput.value;
 
-})
+editBtn.addEventListener('click', popupToOpen);
+closePopup.addEventListener('click', popupToClose);
+saveForm.addEventListener('click', saveData)
 
 
 //like logic

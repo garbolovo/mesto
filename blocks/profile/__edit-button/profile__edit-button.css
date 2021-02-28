@@ -10,7 +10,10 @@
   background-position: center;
   background-repeat: no-repeat;
   box-sizing: border-box;
-  border: 0px solid #ffffff;
+  border:none;
+  outline: none;
+  
+  border: 1px solid #ffffff;
 }
 
 .profile__edit-button:hover {
@@ -20,6 +23,10 @@
 
 @media (max-width: 539px) {
   .profile__edit-button {
-    margin-top: 4px;
+	  
+    margin-top: 10px;
+	min-width: 18px;
+	height: 18px;
+	
   }
 }
