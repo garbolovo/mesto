@@ -8,6 +8,8 @@ const saveForm = document.querySelector('.popup__submit-button');
 const nameInput = document.querySelector('.popup__input-name');
 const positionInput = document.querySelector('.popup__input-position');
 
+const forma = document.querySelector('.popup__edit-form');
+
 
 function popupToClose() {
 	popup.classList.remove('popup_shown');
@@ -34,7 +36,7 @@ function saveData(e) {
 
 editBtn.addEventListener('click', getUserData);
 closePopup.addEventListener('click', popupToClose);
-saveForm.addEventListener('click', saveData)
+forma.addEventListener('submit', saveData)
 
 
 //like logic
