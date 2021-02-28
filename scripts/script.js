@@ -9,14 +9,13 @@ const nameInput = document.querySelector('.popup__input-name');
 const positionInput = document.querySelector('.popup__input-position');
 
 
-
 function popupToClose() {
 	popup.classList.remove('popup_shown');
 }
 
 function popupToOpen() {
   popup.classList.add('popup_shown');
-  getUserData();
+  
 }
 
 function getUserData() {
@@ -33,8 +32,7 @@ function saveData(e) {
   popupToClose();
 }
 
-
-editBtn.addEventListener('click', popupToOpen);
+editBtn.addEventListener('click', getUserData);
 closePopup.addEventListener('click', popupToClose);
 saveForm.addEventListener('click', saveData)
 
