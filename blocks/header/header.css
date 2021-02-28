@@ -32,11 +32,3 @@
     
   }
 }
-
-@media (max-width: 321px) {
-  .header {
-	border-bottom: 0px;
-	margin-bottom: 0;
-    
-  }
-}
