@@ -1,27 +1,32 @@
 .popup__edit-form {
+  box-sizing: border-box;
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   background-color: #ffffff;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  margin: 15% auto;
+ /* margin: 15% auto; */
+ 
   padding: 34px 36px 37px 36px;
-  max-width: 430px;
+  /*max-width: 430px;*/
   color: #000000;
   text-align: center;
   position: relative;
   display: flex;
   flex-direction: column;
+  
+ 
 }
 
 @media(max-width: 768px) {
   .popup__edit-form {
-    width: 50%;
+    width: 90%;
+	margin: 0 auto;
 
   }
 }
 @media(max-width: 539px) {
   .popup__edit-form {
-    width: 75%;
+    width: 100%;
     padding: 25px 21px;
 
   }

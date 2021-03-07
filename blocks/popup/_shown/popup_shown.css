@@ -1,3 +1,5 @@
 .popup_shown {
-  display: block;
+  /*display: block;*/
+  display: flex;
+  justify-content: center;
 }
