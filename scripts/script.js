@@ -31,7 +31,7 @@ const elements = document.querySelector('.elements');
 const cardTemplate = document.querySelector('#card').content;
 
 //FULL IMAGE Els
-const popupFullImageEl = document.querySelector('.popup__image-content');
+const popupFullImageEl = document.querySelector('.popup_image-content');
 const fullImage = document.querySelector('.popup__image');
 const closePopupImageEl = document.querySelector('.popup__close-image');
 const popupPlaceName = document.querySelector('.popup__place-name');
