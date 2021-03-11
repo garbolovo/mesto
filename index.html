@@ -9,6 +9,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="pages/index.css" />
   <title>M e s t o</title>
+
+  <style>
+    .popup__place {
+      position: relative;
+    }
+
+
+    .popup__image {
+      max-width: 75vw;
+      max-height: 75vh;
+
+    }
+  </style>
+
+
+
 </head>
 
 <body>
@@ -16,8 +32,8 @@
     <header class="header">
       <img src="./images/logo.svg" alt="логотип заголовка" class="header__logo" />
     </header>
-	
-	<section class="line"></section>
+
+    <section class="line"></section>
 
     <main class="content">
 
@@ -42,7 +58,7 @@
       <!--      elements-->
       <section class="elements">
 
-        <div class="elements__item">
+        <!-- <div class="elements__item">
           <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="elements__picture"/>
           <div class="elements__description">
             <h2 class="elements__text">Эльбрус Исследователь океана</h2>
@@ -95,11 +111,11 @@
           </div>
 
         </div>
-
+ -->
       </section>
 
       <!--    popup-->
-      <article class="popup">
+      <article class="popup popup_edit-profile">
 
 
         <!-- Modal content -->
@@ -118,6 +134,49 @@
 
       </article>
 
+      <!-- popup Add New Place -->
+      <article class="popup popup_add-card">
+
+
+        <!-- Modal content -->
+        <div class="popup__content">
+          <form class="popup__edit-form popup__edit-form_new-card-form" name="setnewcard">
+            <button class="popup__close popup__close_new-card-form" type="button"></button>
+            <h3 class="popup__title">Новое место</h3>
+            <input class="popup__input popup__input-place-name" name="placename" placeholder="Название">
+            <input class="popup__input popup__input-place-link" name="placelink" placeholder="Ссылка на картинку">
+            <button type="submit" class="popup__submit-button popup__submit-button_new-card-form"
+              value="save-place">Сохранить</button>
+
+          </form>
+
+        </div>
+
+
+      </article>
+
+      <!-- popup Image Full View -->
+
+      <article class="popup popup__image-content">
+
+
+        <!-- Modal content -->
+        <div class="popup__content">
+          <div class="popup__place">
+            <button class="popup__close popup__close-image" type="button"></button>
+            <img src="" alt="фотография места" class="popup__image">
+            <p class=popup__place-name></p>
+          </div>
+
+        </div>
+
+
+      </article>
+
+
+
+
+
 
     </main>
 
@@ -127,7 +186,24 @@
     </footer>
   </div>
 
+  <!-- template -->
+  <template id="card">
+    <div class="elements__item">
+      <button type="button" class="elements__delete"></button>
+      <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="elements__picture">
+      <div class="elements__description">
+        <h2 class="elements__text">Эльбрус Исследователь океана</h2>
+        <button class="elements__like" type="button"></button>
+      </div>
+
+    </div>
+  </template>
+
+
+
+  <script src="scripts/cards.js"></script>
   <script src="scripts/script.js"></script>
+
 </body>
 
 </html>

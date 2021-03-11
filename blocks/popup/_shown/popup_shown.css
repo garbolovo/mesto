@@ -1,5 +1,13 @@
 .popup_shown {
   /*display: block;*/
+
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.3s linear;
+
   display: flex;
   justify-content: center;
+
+
+
 }

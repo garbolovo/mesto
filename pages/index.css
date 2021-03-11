@@ -33,6 +33,7 @@
 @import url("../blocks/elements/__like/_is-liked/elements__like_is-liked.css");
 @import url("../blocks/elements/__picture/elements__picture.css");
 @import url("../blocks/elements/__text/elements__text.css");
+@import url("../blocks/elements/__delete/elements__delete.css");
 
 /*footer*/
 @import url("../blocks/footer/footer.css");
@@ -48,6 +49,7 @@
 @import url("../blocks/popup/__title/popup__title.css");
 @import url("../blocks/popup/__close/popup__close.css");
 @import url("../blocks/popup/_shown/popup_shown.css");
+@import url("../blocks/popup/__place-name/popup__place-name.css");
 
 
 

@@ -1,0 +1,18 @@
+.elements__delete {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    height: 19px;
+    width: 19px;
+    outline: none;
+    border: none;
+    background: none;
+    background-image: url("../../../images/trash-batton.svg");
+    border-style: none;
+}
+
+.elements__delete:hover {
+    cursor: pointer;
+}

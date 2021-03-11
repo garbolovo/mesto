@@ -1,4 +1,5 @@
 .elements__item {
+  position: relative;
   background: white;
   background-size: 100px 100px;
   border-radius: 10px;
