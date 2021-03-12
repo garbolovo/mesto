@@ -2,203 +2,135 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Mesto Project on Yandex Praktikum" />
-  <meta name="keywords" content="html, css, bem responsive @media js-basic" />
-  <meta name="author" content="Aleksei Levkovich" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="pages/index.css" />
+  <meta charset="UTF-8"/>
+  <meta name="description" content="Mesto Project on Yandex Praktikum"/>
+  <meta name="keywords" content="html, css, bem responsive @media js-basic"/>
+  <meta name="author" content="Aleksei Levkovich"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="pages/index.css"/>
   <title>M e s t o</title>
-
-  <style>
-    .popup__place {
-      position: relative;
-    }
-
-
-    .popup__image {
-      max-width: 75vw;
-      max-height: 75vh;
-
-    }
-  </style>
-
-
 
 </head>
 
 <body>
-  <div class="page">
-    <header class="header">
-      <img src="./images/logo.svg" alt="логотип заголовка" class="header__logo" />
-    </header>
+<div class="page">
+  <header class="header">
+    <img src="./images/logo.svg" alt="логотип заголовка" class="header__logo"/>
+  </header>
 
-    <section class="line"></section>
+  <section class="line"></section>
 
-    <main class="content">
+  <main class="content">
 
-      <section class="profile">
-        <img src="./images/avatar-kusto.png" alt="аватар профиля" class="profile__avatar">
+    <section class="profile">
+      <img src="./images/avatar-kusto.png" alt="аватар профиля" class="profile__avatar">
 
 
-        <div class="profile__info">
-          <div class="profile__data">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <p class="profile__position">Исследователь океана</p>
-          </div>
-          <button class="profile__edit-button" type="button"></button>
+      <div class="profile__info">
+        <div class="profile__data">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <p class="profile__position">Исследователь океана</p>
         </div>
-
-        <button class="profile__add-button" type="button"></button>
-
-
-      </section>
-
-
-      <!--      elements-->
-      <section class="elements">
-
-        <!-- <div class="elements__item">
-          <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="elements__picture"/>
-          <div class="elements__description">
-            <h2 class="elements__text">Эльбрус Исследователь океана</h2>
-            <button class="elements__like" type="button"></button>
-          </div>
-
-        </div>
-
-        <div class="elements__item">
-          <img src="./images/kondratiev.jpg" alt="Кондратьев" class="elements__picture" />
-          <div class="elements__description">
-            <h2 class="elements__text">Кондратьев</h2>
-            <button type="button" class="elements__like"></button>
-          </div>
-
-        </div>
-
-        <div class="elements__item">
-          <img src="./images/kamchatka-1.jpg" alt="Камчатка номер 1" class="elements__picture"/>
-          <div class="elements__description">
-            <h2 class="elements__text">Камчатка</h2>
-            <button type="button" class="elements__like"></button>
-          </div>
-
-        </div>
-
-        <div class="elements__item">
-          <img src="./images/kamchatka-2.jpg" alt="Камчатка номер 2" class="elements__picture"/>
-          <div class="elements__description">
-            <h2 class="elements__text">Еще Камчатка</h2>
-            <button type="button" class="elements__like"></button>
-          </div>
-
-        </div>
-
-        <div class="elements__item">
-          <img src="./images/baikal.jpg" alt="Байкал" class="elements__picture"/>
-          <div class="elements__description">
-            <h2 class="elements__text">Озеро Байкал - Лес Государь</h2>
-            <button type="button" class="elements__like"></button>
-          </div>
-
-        </div>
-
-        <div class="elements__item">
-          <img src="./images/ergaki.jpg" alt="Эргаки место" class="elements__picture"/>
-          <div class="elements__description">
-            <h2 class="elements__text">Эргаки</h2>
-            <button type="button" class="elements__like"></button>
-          </div>
-
-        </div>
- -->
-      </section>
-
-      <!--    popup-->
-      <article class="popup popup_edit-profile">
-
-
-        <!-- Modal content -->
-        <div class="popup__content">
-          <form class="popup__edit-form" name="setuserdata">
-            <button class="popup__close" type="button"></button>
-            <h3 class="popup__title">Редактировать Профиль</h3>
-            <input class="popup__input popup__input-name" name="username">
-            <input class="popup__input popup__input-position" name="userposition">
-            <button type="submit" class="popup__submit-button" value="save-data">Сохранить</button>
-
-          </form>
-
-        </div>
-
-
-      </article>
-
-      <!-- popup Add New Place -->
-      <article class="popup popup_add-card">
-
-
-        <!-- Modal content -->
-        <div class="popup__content">
-          <form class="popup__edit-form popup__edit-form_new-card-form" name="setnewcard">
-            <button class="popup__close popup__close_new-card-form" type="button"></button>
-            <h3 class="popup__title">Новое место</h3>
-            <input class="popup__input popup__input-place-name" name="placename" placeholder="Название">
-            <input class="popup__input popup__input-place-link" name="placelink" placeholder="Ссылка на картинку">
-            <button type="submit" class="popup__submit-button popup__submit-button_new-card-form"
-              value="save-place">Сохранить</button>
-
-          </form>
-
-        </div>
-
-
-      </article>
-
-      <!-- popup Image Full View -->
-
-      <article class="popup popup_image-content">
-
-
-        <!-- Modal content -->
-        <div class="popup__content">
-          <div class="popup__place">
-            <button class="popup__close popup__close-image" type="button"></button>
-            <img src="#" alt="фотография места" class="popup__image">
-            <p class=popup__place-name></p>
-          </div>
-
-        </div>
-
-
-      </article>
-
-
-    </main>
-
-    <!-- footer -->
-    <footer class="footer">
-      <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
-    </footer>
-  </div>
-
-  <!-- template -->
-  <template id="card">
-    <div class="elements__item">
-      <button type="button" class="elements__delete"></button>
-      <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="elements__picture">
-      <div class="elements__description">
-        <h2 class="elements__text">Эльбрус Исследователь океана</h2>
-        <button class="elements__like" type="button"></button>
+        <button class="profile__edit-button" type="button"></button>
       </div>
 
+      <button class="profile__add-button" type="button"></button>
+
+
+    </section>
+
+
+    <!--      elements-->
+    <section class="elements">
+
+    </section>
+
+    <!--    popup-->
+    <article class="popup popup_edit-profile">
+
+
+      <!-- Modal content -->
+      <div class="popup__content">
+        <form class="popup__edit-form" name="setuserdata">
+          <button class="popup__close" type="button"></button>
+          <h3 class="popup__title">Редактировать Профиль</h3>
+          <input class="popup__input popup__input-name" name="username" placeholder="Имя" required>
+          <input class="popup__input popup__input-position" name="userposition" placeholder="Профессия" required>
+          <button type="submit" class="popup__submit-button" value="save-data">Сохранить</button>
+
+        </form>
+
+      </div>
+
+
+    </article>
+
+    <!-- popup Add New Place -->
+    <article class="popup popup_add-card">
+
+
+      <!-- Modal content -->
+      <div class="popup__content">
+        <form class="popup__edit-form popup__edit-form_new-card-form" name="setnewcard">
+          <button class="popup__close popup__close_new-card-form" type="button"></button>
+          <h3 class="popup__title">Новое место</h3>
+          <input class="popup__input popup__input-place-name" name="placename" placeholder="Название" required>
+          <input class="popup__input popup__input-place-link" name="placelink" placeholder="Ссылка на картинку"
+                 required>
+          <button type="submit" class="popup__submit-button popup__submit-button_new-card-form"
+                  value="save-place">Сохранить
+          </button>
+
+        </form>
+
+      </div>
+
+
+    </article>
+
+    <!-- popup Image Full View -->
+
+    <article class="popup popup_image-content">
+
+
+      <!-- Modal content -->
+      <div class="popup__content">
+        <div class="popup__place">
+          <button class="popup__close popup__close-image" type="button"></button>
+          <img src="#" alt="фотография места" class="popup__image">
+          <p class=popup__place-name></p>
+        </div>
+
+      </div>
+
+
+    </article>
+
+
+  </main>
+
+  <!-- footer -->
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
+  </footer>
+</div>
+
+<!-- template -->
+<template id="card">
+  <div class="elements__item">
+    <button type="button" class="elements__delete"></button>
+    <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="elements__picture">
+    <div class="elements__description">
+      <h2 class="elements__text">Эльбрус Исследователь океана</h2>
+      <button class="elements__like" type="button"></button>
     </div>
-  </template>
+
+  </div>
+</template>
 
 
-
-  <script src="scripts/cards.js"></script>
-  <script src="scripts/script.js"></script>
+<script src="scripts/cards.js"></script>
+<script src="scripts/script.js"></script>
 
 </body>
 
