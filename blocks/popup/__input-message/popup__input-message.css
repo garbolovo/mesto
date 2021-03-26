@@ -1,0 +1,15 @@
+.popup__input-message {
+  color: red;
+  text-align: left;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-bottom: 13px;
+  max-width: 358px;
+
+
+}
+
+.popup__input-message:last-of-type  {
+  margin-bottom: 0;
+}
+
