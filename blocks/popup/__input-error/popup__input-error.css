@@ -1,0 +1,5 @@
+.popup__input-error {
+  border-bottom: 1px solid red;
+  margin-bottom: 5px;
+  outline-style: none;
+}
