@@ -57,10 +57,11 @@ function closePopup(popup) {
   window.removeEventListener('keydown', closePopupByEscapePress);
   popup.removeEventListener('click', closePopupByOutsideClick)
 
-  return function popupToClose() {
-    popup.classList.remove('popup_shown');
-  }
-  // popup.classList.remove('popup_shown');
+  // return function popupToClose() {
+  //   popup.classList.remove('popup_shown');
+  // }
+
+  popup.classList.remove('popup_shown');
 
 
 }
@@ -87,7 +88,7 @@ function saveUserData(e) {
   e.preventDefault();
   profileName.textContent = nameInput.value;
   profilePosition.textContent = positionInput.value;
-  closePopup(popupEditProfile)();
+  closePopup(popupEditProfile);
 }
 
 
@@ -95,7 +96,11 @@ function saveUserData(e) {
 //open user form
 editBtn.addEventListener('click', getUserData);
 //close user form
-closePopupEl.addEventListener('click', closePopup(popupEditProfile));
+// closePopupEl.addEventListener('click', closePopup(popupEditProfile));
+closePopupEl.addEventListener('click', function () {
+  closePopup(popupEditProfile);
+})
+
 //save user data
 formEditUserProfile.addEventListener('submit', saveUserData)
 
@@ -127,7 +132,11 @@ profileAddButton.addEventListener('click', () => {
 
 });
 //close card form
-closeNewCardPopupButtonEl.addEventListener('click', closePopup(popupAddCardEl));
+// closeNewCardPopupButtonEl.addEventListener('click', closePopup(popupAddCardEl));
+closeNewCardPopupButtonEl.addEventListener('click', function () {
+  closePopup(popupAddCardEl);
+})
+
 //save card form
 cardForm.addEventListener('submit', saveCard);
 
@@ -148,7 +157,10 @@ function showPicture(e) {
 }
 
 //close picture
-closePopupImageEl.addEventListener('click', closePopup(popupFullImageEl));
+// closePopupImageEl.addEventListener('click', closePopup(popupFullImageEl));
+closePopupImageEl.addEventListener('click', function () {
+  closePopup(popupFullImageEl);
+});
 
 // ================= //
 

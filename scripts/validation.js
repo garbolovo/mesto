@@ -10,7 +10,6 @@ const projectFormValidationSettings = {
 }
 
 const hasInvalidInput = (inputList) => {
-  console.log(inputList[0].validity.valid);
   return inputList.some(input => !input.validity.valid);
 }
 

@@ -2,7 +2,6 @@
 
 //outside click logic
 const closePopupByOutsideClick = (event, popup) => {
-  console.log('Click')
   if ((event.target.classList.contains('popup_shown')) || event.target.classList.contains('popup__content')) {
     popup.classList.remove('popup_shown');
   }
@@ -10,7 +9,6 @@ const closePopupByOutsideClick = (event, popup) => {
 
 //escape logic
 const closePopupByEscapePress = (event, popup) => {
-  console.log('Escape')
   if(event.key === 'Escape') {
     popup.classList.remove('popup_shown')
   }
