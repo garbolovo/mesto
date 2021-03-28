@@ -55,13 +55,12 @@ initialCards.forEach(renderCard);
 //utility functions
 function closePopup(popup) {
   window.removeEventListener('keydown', closePopupByEscapePress);
-  popup.removeEventListener('click', closePopupByOutsideClick )
+  popup.removeEventListener('click', closePopupByOutsideClick)
 
   return function popupToClose() {
     popup.classList.remove('popup_shown');
   }
   // popup.classList.remove('popup_shown');
-
 
 
 }
@@ -162,7 +161,6 @@ const cleanErrorMessagesFields = () => {
 
 }
 
-
 const resetCardErrors = () => {
 
   //inputs
@@ -190,23 +188,10 @@ const resetProfileErrors = () => {
   positionInput.classList.remove('popup__input-error');
 
 }
-
-
-
-
 const resetErrors = () => {
   cleanErrorMessagesFields();
   resetProfileErrors();
   resetCardErrors();
-
-  // const inputNameError = formEditUserProfile.querySelector('.popup__input-name-error');
-  // inputNameError.textContent = '';
-  // inputNameError.classList.remove('popup__error_visible');
-  //
-  // const inputPositionError = formEditUserProfile.querySelector('.popup__input-position-error');
-  // inputPositionError.textContent = '';
-
-
 
 }
 
