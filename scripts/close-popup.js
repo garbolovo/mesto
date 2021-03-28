@@ -1,3 +1,5 @@
+
+
 //outside click logic
 const closePopupByOutsideClick = (event, popup) => {
   if ((event.target.classList.contains('popup_shown')) || event.target.classList.contains('popup__content')) {
@@ -27,9 +29,9 @@ const closePopupOutsideAndEscape = () => {
       closePopupByEscapePress(event, popup);
 
     })
+
+
 });
 
-}
 
-//turn on extra popup closing
-closePopupOutsideAndEscape();
+}
