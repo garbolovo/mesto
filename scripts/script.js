@@ -83,7 +83,6 @@ function getUserData() {
   popupEditProfile.querySelector('.popup__submit-button').removeAttribute('disabled');
 
 
-
 }
 
 function saveUserData(e) {
@@ -96,7 +95,7 @@ function saveUserData(e) {
 
 //USER FORM ACTIONS
 //open user form
-editBtn.addEventListener('click', function(event)  {
+editBtn.addEventListener('click', function (event) {
   getUserData();
 
 
@@ -179,7 +178,7 @@ const clrMessages = (popup, messageSelector) => {
 }
 
 const clrInputs = (popup, inputSelector) => {
-  const formInputs =Array.from(popup.querySelectorAll(inputSelector));
+  const formInputs = Array.from(popup.querySelectorAll(inputSelector));
   formInputs.forEach(formInput => {
     formInput.classList.remove('popup__input-error');
     formInput.value = '';
