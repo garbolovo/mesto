@@ -2,10 +2,21 @@
 
 const profileName = document.querySelector('.profile__name');
 const profilePosition = document.querySelector('.profile__position');
+
+//popups
 const popupEditProfile = document.querySelector('.popup_edit-profile');
+const popupAddCardEl = document.querySelector('.popup_add-card');
+
+
 const closePopupEl = document.querySelector('.popup__close');
 const nameInput = document.querySelector('.popup__input-name');
 const positionInput = document.querySelector('.popup__input-position');
+
+//submit buttons
+const profileSubmitBtn = popupEditProfile.querySelector('.popup__submit-button');
+const cardAddSubmitBtn =  popupAddCardEl.querySelector('.popup__submit-button');
+
+
 
 //formEditUserProfile El
 const formEditUserProfile = document.querySelector('.popup__edit-form');
@@ -16,9 +27,11 @@ const editBtn = document.querySelector('.profile__edit-button');
 
 //new-card-popup Els
 // - buttons
-const popupAddCardEl = document.querySelector('.popup_add-card');
 const profileAddButton = document.querySelector('.profile__add-button');
 const closeNewCardPopupButtonEl = document.querySelector('.popup__close_new-card-form');
+
+
+
 // - inputs
 const placeNameInput = document.querySelector('.popup__input-place-name');
 const placeLinkInput = document.querySelector('.popup__input-place-link');
@@ -75,12 +88,18 @@ function openPopup(popup) {
 // USER functions
 function getUserData() {
   openPopup(popupEditProfile);
-  clrMessages(popupEditProfile, '.popup__input-message');
-  clrInputs(popupEditProfile, '.popup__input');
+  clrMessages(popupEditProfile);
+  clrInputs(popupEditProfile);
   nameInput.value = profileName.textContent;
   positionInput.value = profilePosition.textContent;
-  popupEditProfile.querySelector('.popup__submit-button').classList.remove('popup__submit-button_invalid');
-  popupEditProfile.querySelector('.popup__submit-button').removeAttribute('disabled');
+
+
+
+  profileSubmitBtn.classList.remove('popup__submit-button_invalid');
+  profileSubmitBtn.removeAttribute('disabled');
+
+  // popupEditProfile.querySelector('.popup__submit-button').classList.remove('popup__submit-button_invalid');
+  // popupEditProfile.querySelector('.popup__submit-button').removeAttribute('disabled');
 
 
 }
@@ -133,10 +152,9 @@ function deleteCard(e) {
 //open card form
 profileAddButton.addEventListener('click', (event) => {
   openPopup(popupAddCardEl);
-  clrMessages(popupAddCardEl, '.popup__input-message');
-  clrInputs(popupAddCardEl, '.popup__input');
-  popupAddCardEl.querySelector('.popup__submit-button').classList.add('popup__submit-button_invalid');
-
+  clrMessages(popupAddCardEl);
+  clrInputs(popupAddCardEl);
+  cardAddSubmitBtn.classList.add('popup__submit-button_invalid');
 });
 //close card form
 // closeNewCardPopupButtonEl.addEventListener('click', closePopup(popupAddCardEl));
@@ -169,16 +187,16 @@ closePopupImageEl.addEventListener('click', function () {
   closePopup(popupFullImageEl);
 });
 //===========
-const clrMessages = (popup, messageSelector) => {
-  const messages = Array.from(popup.querySelectorAll(messageSelector));
+const clrMessages = (popup) => {
+  const messages = Array.from(popup.querySelectorAll('.popup__input-message'));
   messages.forEach(message => {
     message.textContent = '';
     // message.classList.remove('popup__error_visible');
   })
 }
 
-const clrInputs = (popup, inputSelector) => {
-  const formInputs = Array.from(popup.querySelectorAll(inputSelector));
+const clrInputs = (popup) => {
+  const formInputs = Array.from(popup.querySelectorAll('.popup__input'));
   formInputs.forEach(formInput => {
     formInput.classList.remove('popup__input-error');
     formInput.value = '';
