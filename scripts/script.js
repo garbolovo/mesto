@@ -23,7 +23,7 @@ const closePopupByOutsideClick = (event, popup) => {
 
 //escape logic
 const closePopupByEscapePress = (event, popup) => {
-  if(event.key === 'Escape') {
+  if (event.key === 'Escape') {
     popup.classList.remove('popup_shown')
   }
 }
@@ -45,7 +45,7 @@ const closePopupOutsideAndEscape = () => {
     })
 
 
-});
+  });
 
 
 }
@@ -92,10 +92,6 @@ const positionInput = document.querySelector('.popup__input-position');
 const elements = document.querySelector('.elements');
 const cardTemplate = document.querySelector('#card').content;
 
-//FULL IMAGE Els
-// const fullImage = document.querySelector('.popup__image');
-// const popupPlaceName = document.querySelector('.popup__place-name');
-
 
 //utility functions
 function openPopup(popup) {
@@ -132,24 +128,6 @@ function saveUserData(e) {
 
 //save user data
 formEditUserProfile.addEventListener('submit', saveUserData)
-
-
-// getting initial cards
-// function getCardElement(card) {
-//   const cardElement = cardTemplate.querySelector('.elements__item').cloneNode(true);
-//   const cardPicture = cardElement.querySelector('.elements__picture');
-//   cardPicture.setAttribute('src', card.link);
-//   cardPicture.addEventListener('click', showPicture);
-//   cardElement.querySelector('.elements__text').textContent = card.name;
-//   cardElement.querySelector('.elements__picture').setAttribute('alt', card.name);
-//   cardElement.querySelector('.elements__delete').addEventListener('click', deleteCard);
-//   cardElement.querySelector('.elements__like').addEventListener('click', likeCard);
-//   return cardElement
-// }
-
-// function renderCard(card) {
-//   elements.prepend(getCardElement(card))
-// }
 
 
 //open buttons actions
@@ -207,25 +185,6 @@ closeNewCardPopupButtonEl.addEventListener('click', function () {
 cardForm.addEventListener('submit', saveCard);
 
 
-// LIKE LOGIC
-// function likeCard() {
-//   this.classList.toggle('elements__like_is-liked');
-// }
-
-
-// PICTURE LOGIC
-//open picture
-
-// function showPicture(e) {
-//   openPopup(popupFullImageEl);
-//   fullImage.setAttribute('src', e.target.getAttribute('src'));
-//   fullImage.setAttribute('alt', `Фотография ${e.target.getAttribute('alt')}`);
-//   popupPlaceName.textContent = e.target.getAttribute('alt');
-// }
-
-//close picture
-// closePopupImageEl.addEventListener('click', closePopup(popupFullImageEl));
-
 closePopupImageEl.addEventListener('click', function () {
   closePopup(popupFullImageEl);
 });
@@ -259,5 +218,4 @@ initialCards.forEach(cardItem => {
 
 //CLASS Validation
 const validator = new FormValidator(projectFormValidationSettings);
-console.log(validator)
 validator.enableValidation(projectFormValidationSettings);
