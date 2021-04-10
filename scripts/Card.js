@@ -1,11 +1,17 @@
-//methods - like, delete, show full image
+import { popupImageContent } from "./vars.js";
+import { closePopupByOutsideClick } from './vars.js';
+import { closePopupByEscapePress } from './vars.js';
 
+
+//methods - like, delete, show full image
 export default class Card {
-  constructor({name, link}) {
+  constructor({ name, link }, cardSelector) {
     this._cardName = name;
     this._cardLink = link;
     // this._cardElement = cardTemplate.querySelector('.elements__item').cloneNode(true);
-    this._template = document.querySelector('#card').content
+    this._template = document.querySelector(cardSelector).content
+    this._fullImage = popupImageContent.querySelector('.popup__image')
+    this._fullImageText = popupImageContent.querySelector('.popup__place-name')
   }
 
   _createView() {
@@ -26,12 +32,18 @@ export default class Card {
 
   //show full image
   _showFullImage() {
-    // console.log(popupFullImageEl);
-    const popupImage = document.querySelector('.popup_image-content');
-    popupImage.classList.add('popup_shown')
-    popupImage.querySelector('.popup__image').setAttribute('src', this._cardLink);
-    popupImage.querySelector('.popup__image').setAttribute('alt', this._cardName);
-    popupImage.querySelector('.popup__place-name').textContent = this._cardName;
+    popupImageContent.classList.add('popup_shown')
+    this._fullImage.setAttribute('src', this._cardLink);
+    this._fullImage.setAttribute('alt', this._cardName);
+    this._fullImageText.textContent = this._cardName;
+    window.addEventListener('keydown', function (event) {
+      closePopupByEscapePress(event, popupImageContent)
+      console.log('escape pressed !')
+    })
+    popupImageContent.addEventListener('click', function (event) {
+      closePopupByOutsideClick(event, this)
+    })
+
 
   }
 
@@ -57,13 +69,15 @@ export default class Card {
 
   }
 
-  render(container) {
+  getCard() {
     this._createView();
     this._setEventListeners();
     this._view.querySelector('.elements__picture').setAttribute('src', this._cardLink);
     this._view.querySelector('.elements__picture').setAttribute('alt', this._cardName);
     this._view.querySelector('.elements__text').textContent = this._cardName;
-    console.log(this._view);
-    container.prepend(this._view)
+    // console.log(this._view);
+
+
+    return this._view
   }
 }
