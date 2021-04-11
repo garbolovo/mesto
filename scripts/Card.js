@@ -1,6 +1,6 @@
-import { popupImageContent } from "./vars.js";
-import { closePopupByOutsideClick } from './vars.js';
-import { closePopupByEscapePress } from './vars.js';
+import { popupImageContent } from "./utils.js";
+import { closePopupByOutsideClick } from './utils.js';
+import { closePopupByEscapePress } from './utils.js';
 
 
 //methods - like, delete, show full image
@@ -18,6 +18,8 @@ export default class Card {
     this._view = this._template
       .querySelector('.elements__item')
       .cloneNode(true);
+    this._picture = this._view.querySelector('.elements__picture')
+
   }
 
   //like
@@ -36,17 +38,10 @@ export default class Card {
     this._fullImage.setAttribute('src', this._cardLink);
     this._fullImage.setAttribute('alt', this._cardName);
     this._fullImageText.textContent = this._cardName;
-    window.addEventListener('keydown', function (event) {
-      closePopupByEscapePress(event, popupImageContent)
-      console.log('escape pressed !')
-    })
-    popupImageContent.addEventListener('click', function (event) {
-      closePopupByOutsideClick(event, this)
-    })
-
+    window.addEventListener('keydown', closePopupByEscapePress)
+    popupImageContent.addEventListener('click', closePopupByOutsideClick)
 
   }
-
 
   _setEventListeners() {
     this._view.addEventListener('click', (event) => {
@@ -64,7 +59,6 @@ export default class Card {
         this._showFullImage();
       }
 
-
     })
 
   }
@@ -72,11 +66,10 @@ export default class Card {
   getCard() {
     this._createView();
     this._setEventListeners();
-    this._view.querySelector('.elements__picture').setAttribute('src', this._cardLink);
-    this._view.querySelector('.elements__picture').setAttribute('alt', this._cardName);
+    this._picture.setAttribute('src', this._cardLink);
+    this._picture.setAttribute('alt', this._cardName);
     this._view.querySelector('.elements__text').textContent = this._cardName;
     // console.log(this._view);
-
 
     return this._view
   }

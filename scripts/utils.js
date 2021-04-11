@@ -4,15 +4,21 @@ export const cardForm = document.querySelector('.popup__edit-form_new-card-form'
 
 
 //outside click logic
-export const closePopupByOutsideClick = (event, popup) => {
+export const closePopupByOutsideClick = (event) => {
+  const popupOpened = document.querySelector('.popup_shown');
   if ((event.target.classList.contains('popup_shown')) || event.target.classList.contains('popup__content')) {
-    popup.classList.remove('popup_shown');
+    if (popupOpened) {
+      popupOpened.classList.remove('popup_shown');
+    }
+
   }
 }
-
 //escape logic
-export const closePopupByEscapePress = (event, popup) => {
+export const closePopupByEscapePress = (event) => {
+  const popupOpened = document.querySelector('.popup_shown');
   if (event.key === 'Escape') {
-    popup.classList.remove('popup_shown')
+    if (popupOpened) {
+      popupOpened.classList.remove('popup_shown');
+    }
   }
 }
