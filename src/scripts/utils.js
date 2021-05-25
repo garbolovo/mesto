@@ -22,3 +22,14 @@ export const closePopupByEscapePress = (event) => {
     }
   }
 }
+
+
+export const closePopupByEscapePressInClassPopup = (event, popup) => {
+  if (event.key === 'Escape') {
+    if (popup) {
+      popup.classList.remove('popup_shown');
+    }
+  }
+}
+
+
