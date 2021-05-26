@@ -1,45 +1,19 @@
+import {initialCards} from "./initial-cards.js";
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
-import {initialCards} from "./initial-cards.js";
-import {cardForm, closePopupByEscapePress, closePopupByOutsideClick, formEditUserProfile} from "./utils.js";
 
 import Section from "./Section.js";
-import PopupWithForm from "./PopupWithForm.js";
 import UserInfo from "./UserInfo.js";
+import PopupWithForm from "./PopupWithForm.js";
 import PopupWithImage from "./PopupWithImage.js";
+
+//validation
+import {addButton, cardForm, editBtn, elements, formEditUserProfile, validationConfig} from "./utils.js";
 
 //css
 import '/src/pages/index.css';
 
-const validationConfig = {
-    // formSelector: '.popup__edit-form',
-    inputSelector: ".popup__input",
-    submitButtonSelector: ".popup__submit-button",
-    inactiveButtonClass: "popup__submit-button_invalid",
-    inputErrorClass: "popup__input-error",
-    errorClass: "popup__error_visible",
-};
-//popups
-const popupEditProfile = document.querySelector(".popup_edit-profile");
-const popupAddCardEl = document.querySelector(".popup_add-card");
-const popupFullImageEl = document.querySelector(".popup_image-content");
-
-//edit buttons (opens)
-const editBtn = document.querySelector(".profile__edit-button");
-const addButton = document.querySelector(".profile__add-button");
-
-//submit buttons
-const profileSubmitBtn = popupEditProfile.querySelector(".popup__submit-button");
-const cardAddSubmitBtn = popupAddCardEl.querySelector(".popup__submit-button");
-// - inputs
-const placeNameInput = document.querySelector(".popup__input-place-name");
-const placeLinkInput = document.querySelector(".popup__input-place-link");
-//elements (cards)
-const elements = document.querySelector(".elements");
-const cardTemplate = document.querySelector("#card").content;
-
-
-//BUTTONS
+//BUTTONS action
 editBtn.addEventListener("click", function (event) {
     // openEditProfilePopup();
     profilePopup.open();
@@ -59,9 +33,10 @@ addButton.addEventListener("click", (event) => {
     cardAddPopup.open();
     cardValidator.clearInputs();
     cardValidator.clearMessages();
-    cardAddSubmitBtn.classList.add("popup__submit-button_invalid");
-});
+    cardAddPopup._formSubmitButton.classList.add("popup__submit-button_invalid");
 
+
+});
 
 //CLASS Validation
 const formValidator = new FormValidator(validationConfig, formEditUserProfile);
@@ -119,7 +94,7 @@ const cardAddPopup = new PopupWithForm("popup_add-card", (inputs) => {
 
 const profilePopup = new PopupWithForm("popup_edit-profile", (inputs) => {
     const userInfo = new UserInfo(".profile__name", ".profile__position");
-    let userObj = userInfo.getUserInfo();
+    userInfo.getUserInfo();
     userInfo.setUserInfo(inputs);
     profilePopup.close();
 });
@@ -130,5 +105,6 @@ const imagePopup = new PopupWithImage('popup_image-content');
 profilePopup.setEventListeners();
 cardAddPopup.setEventListeners();
 imagePopup.setEventListeners();
+
 
 
