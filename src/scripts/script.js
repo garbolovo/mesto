@@ -8,7 +8,15 @@ import PopupWithForm from "./PopupWithForm.js";
 import PopupWithImage from "./PopupWithImage.js";
 
 //validation
-import {addButton, cardForm, editBtn, elements, formEditUserProfile, validationConfig} from "./utils.js";
+import {
+    addButton,
+    cardForm,
+    editBtn,
+    elements,
+    formEditUserProfile,
+    handleCardClickHelper,
+    validationConfig
+} from "./utils.js";
 
 //css
 import '/src/pages/index.css';
@@ -52,14 +60,8 @@ const cardList = new Section(
 
 
             const card = new Card(item, "#card", (name, link) => {
-                imagePopup.open();
-                // console.log(imagePopup._popupElement);
-                const fullImageElement = imagePopup._popupElement;
-                fullImageElement.querySelector('.popup__image').setAttribute('src', link);
-                fullImageElement.querySelector('.popup__image').setAttribute('alt', name);
-                fullImageElement.querySelector('.popup__place-name').textContent = name;
-            });
-
+                handleCardClickHelper(name, link, imagePopup)
+            })
             const cardElement = card.getCard();
             cardList.setItem(cardElement);
         },
@@ -78,14 +80,10 @@ const cardAddPopup = new PopupWithForm("popup_add-card", (inputs) => {
         link: inputs.placelink,
     };
 
-    const card = new Card(cardData, "#card", (name, link) => {
-        imagePopup.open();
-        const element = imagePopup._popupElement;
-        element.querySelector('.popup__image').setAttribute('src', link);
-        element.querySelector('.popup__image').setAttribute('alt', name);
-        element.querySelector('.popup__place-name').textContent = name;
 
-    });
+    const card = new Card(cardData, "#card", (name, link) => {
+        handleCardClickHelper(name, link, imagePopup)
+    })
 
     const cardElement = card.getCard();
     elements.prepend(cardElement);

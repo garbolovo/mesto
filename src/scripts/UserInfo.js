@@ -11,9 +11,7 @@ export default class UserInfo {
     }
 
     setUserInfo(inputs) {
-        // const userData = this.getUserInfo();
         this._userNameElement.textContent = `${inputs.username}`
-        // this._userNameElement.textContent = `Hello World !`
         this._userPositionElement.textContent = inputs.userposition
 
 

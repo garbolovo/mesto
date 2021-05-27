@@ -18,33 +18,11 @@ export const validationConfig = {
 };
 
 
-//outside click logic
-export const closePopupByOutsideClick = (event) => {
-    const popupOpened = document.querySelector('.popup_shown');
-    if ((event.target.classList.contains('popup_shown')) || event.target.classList.contains('popup__content')) {
-        if (popupOpened) {
-            popupOpened.classList.remove('popup_shown');
-        }
+export const handleCardClickHelper = (name, link, popup) => {
+    popup.open();
+    const fullImageElement = popup._popupElement;
+    fullImageElement.querySelector('.popup__image').setAttribute('src', link);
+    fullImageElement.querySelector('.popup__image').setAttribute('alt', name);
+    fullImageElement.querySelector('.popup__place-name').textContent = name;
 
-    }
 }
-//escape logic
-export const closePopupByEscapePress = (event) => {
-  const popupOpened = document.querySelector('.popup_shown');
-  if (event.key === 'Escape') {
-    if (popupOpened) {
-      popupOpened.classList.remove('popup_shown');
-    }
-  }
-}
-
-
-export const closePopupByEscapePressInClassPopup = (event, popup) => {
-  if (event.key === 'Escape') {
-    if (popup) {
-      popup.classList.remove('popup_shown');
-    }
-  }
-}
-
-
