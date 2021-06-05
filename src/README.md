@@ -1,7 +1,7 @@
 # Проект Место
 
 
-Ссылка на проект на Github Pages - https://garbolovo.github.io/mesto/
+Github - https://github.com/garbolovo/mesto
 
 
 ### Обзор
