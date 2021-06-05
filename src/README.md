@@ -1,7 +1,7 @@
 # Проект Место
 
 
-Ссылка на проект на Github Pages - https://garbolovo.github.io/mesto/
+Github - https://github.com/garbolovo/mesto
 
 
 ### Обзор
@@ -37,7 +37,10 @@
 #### Проект8
 
 Реализация классов Section, Popup (PopupWithImage, PopupWithForm), UserInfo, преобразование класса Card Сборка проекта c
-помощью Webpack
+помощью Webpack:
+
+- package.json (настройка пакетов для режимов dependencies and devDependencies)
+- webpack.config.js (настройка правил обработки js, картинок, css; подключение плагинов)
 
 **Figma**
 
