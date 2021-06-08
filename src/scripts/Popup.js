@@ -1,3 +1,6 @@
+import {ESCAPE_KEY} from "./utils";
+
+
 export default class Popup {
     constructor(popupSelector) {
         this._popupSelector = popupSelector;
@@ -7,8 +10,7 @@ export default class Popup {
     }
 
     _handleEscClose(event) {
-        if(event.key === 'Escape') {
-            console.log('ESC handler in action !');
+        if (event.key === ESCAPE_KEY) {
             this.close()
         }
     }

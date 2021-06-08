@@ -22,6 +22,7 @@ export default class Card {
     //delete
     _delete() {
         this._view.remove();
+        this._view = '';
     }
 
     _setEventListeners() {
