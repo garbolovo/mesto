@@ -6,9 +6,9 @@ export default class PopupWithForm extends Popup {
         this._popupElement = document.querySelector(`.${this._popupSelector}`);
         this._formElement = this._popupElement.querySelector('.popup__edit-form');
 
-        this._formSubmitButton = this._popupElement.querySelector('.popup__submit-button');
-        this._inputName = this._formElement.querySelector('.popup__input-name');
-        this._inputPosition = this._formElement.querySelector('.popup__input-position');
+        this.formSubmitButton = this._popupElement.querySelector('.popup__submit-button');
+        this.inputName = this._formElement.querySelector('.popup__input-name');
+        this.inputPosition = this._formElement.querySelector('.popup__input-position');
 
         this._handlerSubmitForm = handlerSubmitForm.bind(this);
 

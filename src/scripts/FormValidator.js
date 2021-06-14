@@ -67,22 +67,38 @@ export default class FormValidator {
         this._setInputListeners();
     }
 
-    clearInputs() {
-        const formInputs = Array.from(this._formSelector.querySelectorAll('.popup__input'));
-        formInputs.forEach(formInput => {
-            formInput.classList.remove('popup__input-error');
-            formInput.value = '';
-        })
-    }
+    // clearInputs() {
+    //     // const formInputs = Array.from(this._formSelector.querySelectorAll('.popup__input'));
+    //     this._inputList.forEach(formInput => {
+    //         formInput.classList.remove('popup__input-error');
+    //         formInput.value = '';
+    //     })
+    // }
+    //
+    //
+    // clearMessages() {
+    //     const messages = Array.from(this._formSelector.querySelectorAll('.popup__input-message'));
+    //     messages.forEach(message => {
+    //         message.textContent = '';
+    //         // message.classList.remove('popup__error_visible');
+    //     })
+    // }
 
 
-    clearMessages() {
+    clearForm() {
         const messages = Array.from(this._formSelector.querySelectorAll('.popup__input-message'));
         messages.forEach(message => {
             message.textContent = '';
             // message.classList.remove('popup__error_visible');
         })
+
+        this._inputList.forEach(formInput => {
+            formInput.classList.remove('popup__input-error');
+            formInput.value = '';
+        })
+
     }
+    
 
 
 }
