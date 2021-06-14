@@ -39,7 +39,11 @@ export const handleCardClickHelper = (name, link, popup) => {
 }
 
 export default function cardGenerator(cardItem, selector, popup) {
-    return new Card(cardItem, selector, (name, link) => {
+    // const cardElement = card.getCard();
+    // cardList.setItem(cardElement);
+    const card = new Card(cardItem, selector, (name, link) => {
         handleCardClickHelper(name, link, popup)
     })
+
+    return card.getCard();
 }
