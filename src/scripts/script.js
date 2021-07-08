@@ -1,4 +1,3 @@
-import {initialCards} from "./initial-cards.js";
 import FormValidator from "./FormValidator.js";
 
 import Section from "./Section.js";
@@ -6,11 +5,16 @@ import UserInfo from "./UserInfo.js";
 import PopupWithForm from "./PopupWithForm.js";
 import PopupWithImage from "./PopupWithImage.js";
 
+//API
+import Api from "./Api";
+
 //validation
 import cardGenerator, {addButton, cardForm, editBtn, formEditUserProfile, validationConfig} from "./utils.js";
 
 //css
 import '/src/pages/index.css';
+
+const api = new Api();
 
 //BUTTONS action
 editBtn.addEventListener("click", function () {
@@ -37,20 +41,60 @@ cardValidator.enableValidation();
 //imagePopup
 const imagePopup = new PopupWithImage('popup_image-content');
 
-//Section
-const cardList = new Section(
-    {
-        data: initialCards,
-        renderer: (item) => {
-            const card = cardGenerator(item, "#card", imagePopup)
-            // const cardElement = card.getCard();
-            cardList.setItem(card);
-        },
-    },
-    ".elements"
-);
 
-cardList.renderItems();
+//api cards
+api.getInitialCards()
+
+    .then(cards => {
+        const cardList = new Section(
+            {
+                data: cards,
+                renderer: (item) => {
+                    const card = cardGenerator(item, "#card", imagePopup)
+                    // const cardElement = card.getCard();
+                    cardList.setItem(card);
+                },
+            },
+            ".elements"
+        );
+
+        cardList.renderItems();
+
+
+    })
+
+
+//api userInfo
+api.getUserInfo().then(userData => {
+    // document.querySelector('.profile__name').textContent = userData['name'];
+    // document.querySelector('.profile__position').textContent = userData['about'];
+    // document.querySelector('.profile__avatar').src = userData['avatar'];
+
+
+    const data = {
+        username: userData['name'],
+        userPosition: userData['about'],
+        avatar: userData['avatar'],
+    }
+    initialUserInfo.setUserInfo(data)
+
+})
+
+
+//Section
+// const cardList = new Section(
+//     {
+//         data: initialCards,
+//         renderer: (item) => {
+//             const card = cardGenerator(item, "#card", imagePopup)
+//             // const cardElement = card.getCard();
+//             cardList.setItem(card);
+//         },
+//     },
+//     ".elements"
+// );
+
+// cardList.renderItems();
 
 //POP UPs
 const cardAddPopup = new PopupWithForm("popup_add-card", (inputs) => {
@@ -71,12 +115,12 @@ const profilePopup = new PopupWithForm("popup_edit-profile", (inputs) => {
 //userInfo
 const initialUserInfo = new UserInfo(
     ".profile__name",
-    ".profile__position"
+    ".profile__position",
+    ".profile__avatar",
 );
 
 profilePopup.setEventListeners();
 cardAddPopup.setEventListeners();
 imagePopup.setEventListeners();
-
 
 

@@ -92,10 +92,16 @@ export default class FormValidator {
             // message.classList.remove('popup__error_visible');
         })
 
+        // this._inputList.forEach(formInput => {
+        //     formInput.classList.remove('popup__input-error');
+        //     formInput.value = '';
+        // })
+
+
         this._inputList.forEach(formInput => {
-            formInput.classList.remove('popup__input-error');
-            formInput.value = '';
+            this._hideInputError(this._formSelector, formInput);
         })
+        this._formSelector.reset();
 
     }
     
