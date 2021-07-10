@@ -1,10 +1,15 @@
 import FormValidator from "./FormValidator.js";
 
-import Section from "./Section.js";
+// import Section from "./Section.js";
 import UserInfo from "./UserInfo.js";
 import PopupWithForm from "./PopupWithForm.js";
 import PopupWithImage from "./PopupWithImage.js";
 
+import Section from "./Section";
+
+import {initialCards} from "./initial-cards";
+
+// console.log(initialCards)
 //API
 import Api from "./Api";
 
@@ -20,6 +25,7 @@ const api = new Api();
 editBtn.addEventListener("click", function () {
     profilePopup.open();
     const userData = initialUserInfo.getUserInfo();
+    console.log(userData)
     profilePopup.inputName.value = userData.name;
     profilePopup.inputPosition.value = userData.position;
     profilePopup.formSubmitButton["disabled"] = false;
@@ -42,27 +48,6 @@ cardValidator.enableValidation();
 const imagePopup = new PopupWithImage('popup_image-content');
 
 
-//api cards
-api.getInitialCards()
-
-    .then(cards => {
-        const cardList = new Section(
-            {
-                data: cards,
-                renderer: (item) => {
-                    const card = cardGenerator(item, "#card", imagePopup)
-                    // const cardElement = card.getCard();
-                    cardList.setItem(card);
-                },
-            },
-            ".elements"
-        );
-
-        cardList.renderItems();
-
-
-    })
-
 
 //api userInfo
 api.getUserInfo().then(userData => {
@@ -72,8 +57,8 @@ api.getUserInfo().then(userData => {
 
 
     const data = {
-        username: userData['name'],
-        userPosition: userData['about'],
+        name: userData['name'],
+        about: userData['about'],
         avatar: userData['avatar'],
     }
     initialUserInfo.setUserInfo(data)
@@ -81,20 +66,47 @@ api.getUserInfo().then(userData => {
 })
 
 
-//Section
-// const cardList = new Section(
-//     {
-//         data: initialCards,
-//         renderer: (item) => {
-//             const card = cardGenerator(item, "#card", imagePopup)
-//             // const cardElement = card.getCard();
-//             cardList.setItem(card);
-//         },
-//     },
-//     ".elements"
-// );
+//api cards
+// api.getInitialCards()
+//
+//     .then(cards => {
+//         const cardList = new Section(
+//             {
+//                 data: cards,
+//                 renderer: (item) => {
+//                     const card = cardGenerator(item, "#card", imagePopup)
+//                     // const cardElement = card.getCard();
+//                     cardList.setItem(card);
+//                 },
+//             },
+//             ".elements"
+//         );
+//
+//         cardList.renderItems();
+//
+//
+//     })
+//
 
-// cardList.renderItems();
+
+Section
+const cardList = new Section(
+    {
+
+
+        data: initialCards,
+        renderer: (item) => {
+            const card = cardGenerator(item, "#card", imagePopup)
+            // const cardElement = card.getCard();
+            cardList.setItem(card);
+        },
+    },
+    ".elements"
+);
+
+cardList.renderItems();
+//
+
 
 //POP UPs
 const cardAddPopup = new PopupWithForm("popup_add-card", (inputs) => {
@@ -107,11 +119,6 @@ const cardAddPopup = new PopupWithForm("popup_add-card", (inputs) => {
     cardAddPopup.close();
 });
 
-const profilePopup = new PopupWithForm("popup_edit-profile", (inputs) => {
-    initialUserInfo.setUserInfo(inputs);
-    profilePopup.close();
-});
-
 //userInfo
 const initialUserInfo = new UserInfo(
     ".profile__name",
@@ -119,8 +126,44 @@ const initialUserInfo = new UserInfo(
     ".profile__avatar",
 );
 
+
+const profilePopup = new PopupWithForm("popup_edit-profile", (inputs) => {
+
+    // initialUserInfo.setUserInfo(inputs);
+    // api.editUserProfile(inputs.name, inputs.about)
+
+    console.log(inputs)
+    api.editUserProfile(inputs)
+        .then(data => {
+            console.log('DATA', data)
+            initialUserInfo.setUserInfo(data);
+            profilePopup.close();
+
+
+        })
+
+
+        .catch(err => {
+            console.log(err)
+        })
+
+
+});
+
+
 profilePopup.setEventListeners();
 cardAddPopup.setEventListeners();
 imagePopup.setEventListeners();
 
+//=================================== T E S T  ZONE =================================
 
+// api.addCard({name: 'Щёлково', link: 'https://myksp.ru/upload/000/u1/b/3/redaktor-saita-po-posyolku-garbolovo-photo-big.jpg'})
+//     .then(res => {
+//         if (res.ok) {
+//             return res.json()
+//
+//         }
+//     })
+//     .then(data => {
+//         console.log(data)
+//     })

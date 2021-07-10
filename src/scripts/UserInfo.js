@@ -12,8 +12,8 @@ export default class UserInfo {
     }
 
     setUserInfo(inputs) {
-        this._userNameElement.textContent = `${inputs.username}`
-        this._userPositionElement.textContent = inputs.userPosition
+        this._userNameElement.textContent = `${inputs.name}`
+        this._userPositionElement.textContent = inputs.about
         this._userAvatarElement.src = inputs.avatar
 
 
